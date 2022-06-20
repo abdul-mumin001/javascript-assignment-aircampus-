@@ -23,15 +23,32 @@
 
 //3Q. Write a program to read the first and last digit of a number
 
-let num=parseInt(process.argv[2]);
-function firsDigit(num){
-    while(num>=10)
-    num=Math.floor(num/10);
-    return num;
-}
-function lastDigit(num){
-    num=Math.floor(num%10)
-    return num;
-}
-console.log(firsDigit(num)+" "+lastDigit(num));
+// let num=parseInt(process.argv[2]);
+// function firsDigit(num){
+//     while(num>=10)
+//     num=Math.floor(num/10);
+//     return num;
+// }
+// function lastDigit(num){
+//     num=Math.floor(num%10)
+//     return num;
+// }
+// console.log(firsDigit(num)+" "+lastDigit(num));
 
+
+//4Q.Check whether the given number is armstrong or not
+
+const num=parseInt(process.argv[2]);
+const n=num.length;
+let sum=0;
+let x= num;
+while(x>0){
+    let rem=x%10;
+    sum+=rem**n;
+    x=parseInt(x/10)
+}
+if(sum==num){
+    console.log("is an armstrong")
+}else{
+    console.log("is not an armstrong")
+}
